@@ -104,7 +104,7 @@ function lemmafilter(text)
   for(var i=0,l=word_ambis.length;i<l;i++)
   {
    var word=word_ambis[i];
-   un_hefil(word,ord_ambis);
+   un_hefil(word,word_ambis);
    un_hufal(word,word_ambis);
    //ungender(word_ambis);
    //unplural(word_ambis);
