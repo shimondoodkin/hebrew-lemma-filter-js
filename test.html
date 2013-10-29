@@ -3,11 +3,12 @@
 <script lanugage="javascript" src="index.js"></script>
 </head>
 <body bgcolor="#FFF">
-<textarea id="intext">החברים של שמעון אוכלים גלידה פרחונית</textarea>
-<textarea id="outtext">צריך תוצאה כמו:
+input:<br/>
+<textarea id="intext" style="width:70%" rows="6">החברים של שמעון אוכלים גלידה פרחונית</textarea><br/>
+<textarea id="outtext" style="width:70%" rows="6">צריך תוצאה כמו:
 חבר של שמעון אוכל גלידה פרח
-</textarea>
+</textarea><br/>
 <input type="button" onclick="
 document.getElementById("outtext").value=lemmafilter(document.getElementById("intext").value.split(/[\s,.\/]+/)).join(' ');
-"/>
+" value="test" />
 <html>
