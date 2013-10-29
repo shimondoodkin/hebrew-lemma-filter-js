@@ -73,10 +73,94 @@ function un_hefil(word_ambis)
  {
   var word=word_ambis[i];
   var m=null;
-  //עבר
-  if(m=word.match(//)=='ל')word_ambis.push(word.substring(1,word.length)+'ה');
-  if(word.substring(0,2)=='הת')word_ambis.push(word.substring(1,word.length)+'ה');
-  if(word.substring(0,2)=='מת')word_ambis.push(word.substring(1,word.length)+'ה');
+//  - בניין הִפְעִיל
+// עבר + הוא + האות ל בהתחלה - שם הפועל - לְהַלְבִּיש
+//עבר
+ // הִלְבַּשְׁתִּי - מדבר (אני)
+if(m=word.match(/ה(.+)תי/))word_ambis.push(m[1].replace(/(.+)(.)$/,'ה$1י$2'))
+ // הִלְבַּשְׁתָּ - נוכח (אתה)
+if(m=word.match(/ה(.+)ת/))word_ambis.push(m[1].replace(/(.+)(.)$/,'ה$1י$2'))
+ // הִלְבַּשְׁתְּ - נוכחת (את)
+if(m=word.match(/ה(.+)ת/))word_ambis.push(m[1].replace(/(.+)(.)$/,'ה$1י$2'))
+ // הִלְבִּישׁ - נסתר (הוא)
+if(m=word.match(/ה(.+)י(.)/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // הִלְבִּישָׁה - נסתרת (היא)
+if(m=word.match(/ה(.+)י(.)ה/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // הִלְבַּשְנוּ - מדברים (אנו)
+if(m=word.match(/ה(.+)נו/))word_ambis.push(m[1].replace(/(.+)(.)$/,'ה$1י$2'))
+ // הִלְבַּשְׁתֶּם - נוכחים (אתם)
+if(m=word.match(/ה(.+)תם/))word_ambis.push(m[1].replace(/(.+)(.)$/,'ה$1י$2'))
+ // הִלְבַּשְׁתֶּן - נוכחות (אתן)
+if(m=word.match(/ה(.+)תן/))word_ambis.push(m[1].replace(/(.+)(.)$/,'ה$1י$2'))
+ // הִלְבִּישוּ - נסתרים (הם)
+if(m=word.match(/ה(.+)י(.)ו/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // הִלְבִּישוּ - נסתרות (הן)
+if(m=word.match(/ה(.+)י(.)ו/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+//הווה
+ // מַלְבִּיש / מַלְבִּישָׁה - מדבר (אני) זכר
+if(m=word.match(/מ(.+)י(.)/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // מַלְבִּיש / מַלְבִּישָׁה - מדבר (אני) נקבה
+if(m=word.match(/מ(.+)י(.)ה/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // מַלְבִּישׁ - נוכח (אתה)
+if(m=word.match(/מ(.+)י(.)/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // מַלְבִּישָׁה - נוכחת (את)
+if(m=word.match(/מ(.+)י(.)ה/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // מַלְבִּישׁ - נסתר (הוא)
+if(m=word.match(/מ(.+)י(.)/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // מַלְבִּישָׁה - נסתרת (היא)
+if(m=word.match(/מ(.+)י(.)ה/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // מַלְבִּישִׁים - מדברים (אנו)
+if(m=word.match(/מ(.+)י(.)ים/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // מַלְבִּישִׁים - נוכחים (אתם)
+if(m=word.match(/מ(.+)י(.)ים/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // מַלְבִּישׁוֹת - נוכחות (אתן)
+if(m=word.match(/מ(.+)י(.)ות/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // מַלְבִּישִׁים - נסתרים (הם)
+if(m=word.match(/מ(.+)י(.)ים/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // מַלְבִּישׁוֹת - נסתרות (הן)
+if(m=word.match(/מ(.+)י(.)ות/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+//עתיד
+ // אַלְבִּישׁ - מדבר (אני)
+if(m=word.match(/א(.+)י(.)/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // תַּלְבִּישׁ - נוכח (אתה)
+if(m=word.match(/ת(.+)י(.)/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // תַּלְבִּישִׁי - נוכחת (את)
+if(m=word.match(/ת(.+)י(.)י/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // יַלְבִּישׁ - נסתר (הוא)
+if(m=word.match(/י(.+)י(.)/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // תַּלְבִּיש - נסתרת (היא)
+if(m=word.match(/ת(.+)י(.)/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // נַלְבִּישׁ - מדברים (אנו)
+if(m=word.match(/נ(.+)י(.)/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // תַּלְבִּישׁוּ - נוכחים (אתם)
+if(m=word.match(/ת(.+)י(.)ו/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // תַּלְבֵּשְׁנָה - נוכחות (אתן)
+if(m=word.match(/ת(.+)נה/))word_ambis.push(m[1].replace(/(.+)(.)$/,'ה$1י$2'))
+ // יַלְבִּישׁוּ - נסתרים (הם)
+if(m=word.match(/י(.+)י(.)ו/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // תַּלְבֵּשְׁנָה - נסתרות (הן)
+if(m=word.match(/ת(.+)נה/))word_ambis.push(m[1].replace(/(.+)(.)$/,'ה$1י$2'))
+//ציווי
+ // - - מדבר (אני)
+//-
+ // הַלְבֵּשׁ - נוכח (אתה)
+if(m=word.match(/ה(.+)/))word_ambis.push(m[1].replace(/(.+)(.)$/,'ה$1י$2'))
+ // הַלְבִּישִׁי - נוכחת (את)
+if(m=word.match(/ה(.+)י(.)י/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // - - נסתר (הוא)
+//-
+ // - - נסתרת (היא)
+//-
+ // - - מדברים (אנו)
+//-
+ // הַלְבִּישׁוּ - נוכחים (אתם)
+if(m=word.match(/ה(.+)י(.)ו/))word_ambis.push(m[1]+m[2]).replace(/(.+)(.)$/,'ה$1י$2'))
+ // הַלְבֵּשְׁנָה - נוכחות (אתן)
+if(m=word.match(/ה(.+)נה/))word_ambis.push(m[1].replace(/(.+)(.)$/,'ה$1י$2'))
+ // - - נסתרים (הם)
+//-
+ // - - נסתרות (הן)
+//-
  }
 }
 
