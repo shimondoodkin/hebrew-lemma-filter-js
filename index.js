@@ -15,7 +15,7 @@ function lemmafilter(sentencewords)
 {
  for(var i=0;i<sentencewords.length;i++)
  {
-  var word_ambis=[];wordarr.push(sentencewords[i]);
+  var word_ambis=[];word_ambis.push(sentencewords[i]);
   
   unverb(word_ambis);
   ungender(word_ambis);
