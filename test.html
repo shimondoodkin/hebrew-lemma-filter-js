@@ -1,0 +1,13 @@
+<html>
+<head>
+<script lanugage="javascript" src="index.js"></script>
+</head>
+<body bgcolor="#FFF">
+<textarea id="intext">החברים של שמעון אוכלים גלידה פרחונית</textarea>
+<textarea id="outtext">צריך תוצאה כמו:
+חבר של שמעון אוכל גלידה פרח
+</textarea>
+<input type="button" onclick="
+document.getElementById("outtext").value=lemmafilter(document.getElementById("intext").value.split(/[\s,.\/]+/)).join(' ');
+"/>
+<html>
