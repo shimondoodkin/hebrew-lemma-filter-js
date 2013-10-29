@@ -97,7 +97,7 @@ function lemmafilter(text)
 {
  return text.replace(/[^\s.,:\/\\]+/g,function(m){
   console.log(m)
-  var word_ambis=[unniqqud(m[0])];//first element in array // optianally to give additional points for niqqud after a sucsessful match, sometimes people use only one niqqud accent not al of them, for each niqqud to add a point of relieability,
+  var word_ambis=[unniqqud(m)];//first element in array // optianally to give additional points for niqqud after a sucsessful match, sometimes people use only one niqqud accent not al of them, for each niqqud to add a point of relieability,
   
   un_hefil(word_ambis);
   //ungender(word_ambis);
