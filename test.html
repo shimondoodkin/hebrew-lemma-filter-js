@@ -20,5 +20,13 @@ document.getElementById('outtext').value=document.getElementById('intext').value
 document.getElementById('outtext').value=document.getElementById('intext').value.replace(/BR/g,'\r\n');
 " value="replace BR" />
 
-
+<br/><br/>
+החלף שורש
+<input type="text" onclick="
+var s=this.value,s1=s.substring(0,s.length-2),s2=s[s.length-1];
+document.getElementById('outtext').value=document.getElementById('intext').value
+.replace(new RegExp(s,"g"),'(.+)')
+.replace(new RegExp(s1,"g"),'(.+)')
+.replace(new RegExp(s2,"g"),'(.+)');
+" value="replace BR" />
 <html>
