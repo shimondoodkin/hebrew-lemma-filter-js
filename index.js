@@ -114,7 +114,7 @@ function un_hefil(word_ambis)
  //בניין הִפְעִיל
  //הטיית הפועל בבניין זה בכל הגופים לפי השורש ל.ב.ש
  //שם הפועל - לְהַלְבִּיש
- for(var i=0;i<word_ambis.length;i++)
+ for(var i=0,l=word_ambis.length;i<l;i++)
  {
   var word=word_ambis[i];
   var m=null;
