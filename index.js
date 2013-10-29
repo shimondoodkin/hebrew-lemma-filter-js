@@ -3,13 +3,17 @@
 // $sentences = preg_split('/(?<=[.?!])\s+(?=[a-z])/i', $str);
 // print_r($sentences);
 //
-
-// i look here:
+// $0.value.replace(/[\u0590-\u05C7]/g,"")
+//
+// 
 /*
 
-http://www.morim.com/memento%20binyanim.htm
+links:
+
+
 he.wikipedia.org/wiki/דקדוק_עברי
 he.wikipedia.org/wiki/שורשן
+http://www.safa-ivrit.org/
 
 לפי:
 he.wikipedia.org/wiki/גזרה_(דקדוק)
@@ -38,9 +42,33 @@ he.wikipedia.org/wiki/בניינים_בעברית
 
 המטרה היא להביא את כל המצבים לעבר ונסתר שזה שם גוף הוא למשל הפעיל
 
-http://www.safa-ivrit.org/
-
+i look here:
+http://www.morim.com/memento%20binyanim.htm
 and try to make rules from it
+
+i have an excel file, in it i copy a table from that website, then i make it not 3 columns but single column one after another.
+then i replace nikud in it (add same formatting:when i pace the column without nikud also i copy and pace special formatting only on it with the style of the column with nikud)
+
+in chrome browser i paste into any textarea on the internet(http://regexlib.com/RETester.aspx) and right click on it and from menu click inspect element. in console i write $0 . is the selected element (text box) 
+$0.value.replace(/[\u0590-\u05C7]/g,"")
+i copy the result from console to a notepad then from notepad to excel
+
+then i replace the shoresh in the list without nikud with regex matches as a column of the regex match
+
+$0.value.replace(/לבש/g,"(.+)").replace(/לב/g,"(.+)").replace(/ש/g,"(.)")
+
+then i make an if statment  (i have 2 version of statments if there are 2 matches i connect them together otherwise i use the first only)  
+the if statment contains regesp replace to original form of the poal past-he , probably i will change it to something else later
+then i add comments on comments lines with br then i replace the br to new lines \r\n
+then i place the rules here in a function
+
+
+to test just paste the text with nikkud from the columns and see the result all the same in test.html file 
+
+// til now this is without gzerot// gzerot can be a
+
+/// names are not recognized probably will be by noticeing a word after poal or before poal if poal has savil
+
 
 */
 
@@ -55,15 +83,32 @@ function lemmafilter(sentencewords)
  {
   var word_ambis=[];word_ambis.push(unniqqud(sentencewords[i])); // optianally to give additional points for niqqud after a sucsessful match, sometimes people use only one niqqud accent not al of them, for each niqqud to add a point of relieability,
   
-  unverb(word_ambis);
-  ungender(word_ambis);
-  unplural(word_ambis);
+  un_hefil(word_ambis);
+  //ungender(word_ambis);
+  //unplural(word_ambis);
   
   sentencewords[i]=word_ambis.join('|');
  }
  
  return sentencewords;
 }
+
+/*
+simple function
+
+function unverb(word_ambis)
+{
+ for(var i=0;i<word_ambis.length;i++)
+ {
+  var word=word_ambis[i];
+  if(word[0]=='ל')word_ambis.push(word.substring(1,word.length)+'ה');
+  if(word.substring(0,2)=='הת')word_ambis.push(word.substring(1,word.length)+'ה');
+  if(word.substring(0,2)=='מת')word_ambis.push(word.substring(1,word.length)+'ה');
+ }
+}
+
+*/
+
 function un_hefil(word_ambis)
 {
  //בניין הִפְעִיל
