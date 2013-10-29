@@ -76,7 +76,7 @@ to test just paste the text with nikkud from the columns and see the result all 
  this function goes overs an array of words. and converts every each word into an array of ambiguations.
  each subfunction processes the whole word array for each word and appends ambiguations to bottom of array.
 */
-
+/*
 function lemmafilter(sentencewords)
 {
  for(var i=0;i<sentencewords.length;i++)
@@ -91,6 +91,19 @@ function lemmafilter(sentencewords)
  }
  
  return sentencewords;
+}
+*/
+function lemmafilter(text)
+{
+ return text.replace(/[^\s.,:\/\\]/g,function(m){
+  console.log(m)
+  var word_ambis=[unniqqud(m[0])];//first element in array // optianally to give additional points for niqqud after a sucsessful match, sometimes people use only one niqqud accent not al of them, for each niqqud to add a point of relieability,
+  
+  un_hefil(word_ambis);
+  //ungender(word_ambis);
+  //unplural(word_ambis);
+  return word_ambis.join('|');
+ });
 }
 
 /*
