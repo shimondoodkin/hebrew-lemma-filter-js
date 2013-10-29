@@ -11,4 +11,14 @@ input:<br/>
 <input type="button" onclick="
 document.getElementById('outtext').value=lemmafilter(document.getElementById('intext').value);
 " value="test" />
+
+<input type="button" onclick="
+document.getElementById('outtext').value=document.getElementById('intext').value.replace(/[\u0590-\u05C7]/g,'');
+" value="remove niqqud" />
+
+<input type="button" onclick="
+document.getElementById('outtext').value=document.getElementById('intext').value.replace(/BR/g,'\r\n');
+" value="replace BR" />
+
+
 <html>
