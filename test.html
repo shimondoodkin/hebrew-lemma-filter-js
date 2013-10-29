@@ -23,10 +23,13 @@ document.getElementById('outtext').value=document.getElementById('intext').value
 <br/><br/>
 החלף שורש
 <input type="text" onclick="
-var s=this.value,s1=s.substring(0,s.length-2),s2=s[s.length-1];
+var s=this.value,syl1=s.substring(0,s.length-2),syl2=s.substring(1,s.length-2);
 document.getElementById('outtext').value=document.getElementById('intext').value
 .replace(new RegExp(s,'g'),'(.+)')
-.replace(new RegExp(s1,'g'),'(.+)')
-.replace(new RegExp(s2,'g'),'(.+)');
+.replace(new RegExp(syl1,'g'),'(.+)')
+.replace(new RegExp(syl2,'g'),'(.+)')
+.replace(new RegExp(s[0],'g'),'(.+)')
+.replace(new RegExp(s[1],'g'),'(.+)')
+.replace(new RegExp(s[2],'g'),'(.+)');
 " value="כתב" />
 <html>
