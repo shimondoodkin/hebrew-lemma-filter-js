@@ -43,19 +43,19 @@ document.getElementById('outtext').value=document.getElementById('outtext').valu
 <input type="button" onclick="
 var s=document.getElementById('shoresh').value,syl1=s.substring(0,s.length-2),syl2=s.substring(1,s.length-2);
 document.getElementById('outtext').value=document.getElementById('outtext').value
-.replace(new RegExp(s[0],'g'),'(.+)');
+.replace(new RegExp(s[0],'g'),'(.)');
 " value="+1" />
 
 <input type="button" onclick="
 var s=document.getElementById('shoresh').value,syl1=s.substring(0,s.length-2),syl2=s.substring(1,s.length-2);
 document.getElementById('outtext').value=document.getElementById('outtext').value
-.replace(new RegExp(s[1],'g'),'(.+)');
+.replace(new RegExp(s[1],'g'),'(.)');
 " value="+2" />
 
 <input type="button" onclick="
 var s=document.getElementById('shoresh').value,syl1=s.substring(0,s.length-2),syl2=s.substring(1,s.length-2);
 document.getElementById('outtext').value=document.getElementById('outtext').value
-.replace(new RegExp(s[2],'g'),'(.+)');
+.replace(new RegExp(s[2],'g'),'(.)');
 " value="+3" />
 
 <html>
