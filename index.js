@@ -15,6 +15,10 @@ he.wikipedia.org/wiki/דקדוק_עברי
 he.wikipedia.org/wiki/שורשן
 http://www.safa-ivrit.org/
 
+he.wikipedia.org/wiki/דקדוק_עברי
+
+http://www.haifux.org/lectures/62/
+
 לפי:
 he.wikipedia.org/wiki/גזרה_(דקדוק)
 
