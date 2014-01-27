@@ -77,6 +77,13 @@ to test just paste the text with nikkud from the columns and see the result all 
 /// names are not recognized probably will be by noticeing a word after poal or before poal if poal has savil
 
 
+// יש בעייה של תחיליות
+//http://he.wikipedia.org/wiki/%D7%93%D7%A7%D7%93%D7%95%D7%A7_%D7%A2%D7%91%D7%A8%D7%99_-_%D7%9E%D7%95%D7%A0%D7%97%D7%99%D7%9D
+
+
+//אולי להוסיף שרשן כלומר
+//למחוק אותיות האו"י משורש ושים מרווחים בין האותיות הקשות ולהחזיר את את אותיות ההייוי למרווחים שבין האותיות הקשות.
+
 */
 
 /*
